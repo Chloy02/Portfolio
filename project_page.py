@@ -54,7 +54,7 @@ def projects():
             }
         },
         {
-            "title": "Insightful Data Explorer",
+            "title": "Uber Data Analysis & Visualization",
             "description": """A **Streamlit-based interactive data exploration app** with AutoML capabilities.
             - **Data Upload & Preprocessing:** Users can upload CSV/Excel files.
             - **AI-Powered Data Insights:** Uses **Google Gemini-1.5-Flash-Latest** for data exploration.
@@ -79,7 +79,7 @@ def projects():
             - **Regression Models:** Implemented Linear Regression, Decision Trees, Random Forest.
             - **Feature Engineering & Hyperparameter Tuning** to improve accuracy.
             """,
-            "tools": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn"],
+            "tools": ["R"],
             "links": {
                 "GitHub": "https://github.com/archanags001/ml_projects/blob/main/California_Housing_Price_Prediction.ipynb"
             }
