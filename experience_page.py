@@ -3,25 +3,38 @@ from streamlit_lottie import st_lottie
 import json
 
 def experience():
-    col1,col2 =st.columns(2)
-
+    # Header section with animation
+    st.markdown("<h1 style='text-align: center; margin-bottom: 30px;'>Professional Experience</h1>", unsafe_allow_html=True)
+    
+    col1, col2 = st.columns([1, 1])
+    
     with col1:
         st.markdown("""
             <style>
-            .centered {
+            .experience-intro {
                 display: flex;
-                align-items: center;
+                flex-direction: column;
+                justify-content: center;
                 height: 100%;
-                margin-top: 200px; /* Adjust this value as needed */
+                padding: 20px;
+                border-radius: 10px;
+                background-color: rgba(240, 240, 240, 0.2);
+                margin-top: 50px;
             }
             </style>
-            <div class="centered">
-                <h2>Experience</h2>
+            <div class="experience-intro">
+                <h3>Building My Professional Journey</h3>
+                <p>I am currently focused on developing my skills in data science and machine learning through 
+                projects, coursework, and self-study. As I work toward building industry experience,
+                I am passionate about applying my technical knowledge to create innovative solutions.</p>
             </div>
         """, unsafe_allow_html=True)
+    
+    # Load animation
     path = "Animation_exp.json"
     with open(path, "r") as file:
         url = json.load(file)
+    
     with col2:
         st_lottie(url,
                   reverse=True,
@@ -31,96 +44,178 @@ def experience():
                   loop=True,
                   quality='high',
                   )
-    with st.container():
-        col1,col2 = st.columns([3,2])
-        col1.markdown(""" 
-            ### Data Scientist –– [Wonder Chrome](https://www.linkedin.com/company/wonderchrome/) (PRESENT)
-            - Conducted A/B testing experiments to assess the effectiveness of various
-            promotion strategies, resulting in a remarkable 24% increase in revenue.
-            - Developed machine learning models using scikit-learn to optimize pricing
-            strategies, leading to a substantial 12% boost in profit.
-            - Led full data lifecycle: collection, cleaning, feature engineering, modeling,
-            validation, and dashboard/report creation.
-            - Proficiently developed complex SQL queries, procedures, and reports using
-            Redshift, Sagemaker, SQL, and Python to meet diverse client needs.
-            - Developed a Large-scale multi-label text classification model using Tensorflow
-            and Keras to enhance text analysis capabilities.
-                            """)
-        col2.markdown("""
-            **Tools:**
-
-            - Programming Languages: Python, SQL
-            - Machine Learning: Scikit-Learn, TensorFlow, Keras
-            - Data Visualization: Matplotlib, Seaborn, Plotly, Retool, Tableau
-            - Cloud: Redshift, Sagemaker, S3 Bucket
-            - ETL Processes: Custom SQL, Python scripts
-            - A/B Testing: Custom Python scripts
-            - Other Tools: Git, Colab Notebooks, Retool
-            """)
-    with st.container():
-        col1, col2 = st.columns([3, 2])
-        col1.markdown("""
-           ### Data Scientist –– Freelance [Upwork](https://www.upwork.com/freelancers/~010f3758a004ea64dd?viewMod) (PRESENT)
     
-           - **Top Rated freelancer**, representing the top 10% of Upwork talent.
-           - Collaborated with 7 clients to understand their company needs and devise data-driven solutions.
-           - Successfully completed 6 jobs, each with a 5-star rating and positive feedback.
-           - Facilitated end-to-end development, testing, and monitoring of analytical models for 5 clients.
-           - Designed and developed a News search tool leveraging LLM and Langchain technologies, enhancing the efficiency of information retrieval and analysis.
-           - Efficiently managed Azure Databricks, executed ETL, and developed ML models for small and large datasets (125GB, 1B rows), automated scheduling, tracked experiments, implemented Auto ML, and maintained resource efficiency.
-           """)
-        col2.markdown(""" 
-        **Tools:**
+    # Custom CSS for experience cards
+    st.markdown("""
+        <style>
+        .experience-card {
+            border-left: 4px solid #2e6eff;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            background-color: rgba(240, 240, 240, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .tools-section {
+            background-color: rgba(46, 110, 255, 0.1);
+            border-radius: 5px;
+            padding: 15px;
+        }
+        .placeholder-message {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(240, 240, 240, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    # Skills showcase section
+    st.markdown("<h2 style='text-align: center; margin: 30px 0;'>Technical Skills</h2>", unsafe_allow_html=True)
+    
+    cols = st.columns(3)
+    
+    with cols[0]:
+        st.markdown("""
+            <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: rgba(46, 110, 255, 0.1);">
+                <h3 style="margin-bottom: 10px;">Programming</h3>
+                <p>Python, SQL, R, Java, C, Kotlin, JavaScript, HTML </p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with cols[1]:
+        st.markdown("""
+            <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: rgba(46, 110, 255, 0.1);">
+                <h3 style="margin-bottom: 10px;">Data Science</h3>
+                <p>Machine Learning, Data Analysis, Statistics, Maths </p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with cols[2]:
+        st.markdown("""
+            <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: rgba(46, 110, 255, 0.1);">
+                <h3 style="margin-bottom: 10px;">Tools</h3>
+                <p>Pandas, Numpy, Scikit-learn, TensorFlow, Matplotlib</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    # Education section
+    st.markdown("<h2 style='text-align: center; margin: 30px 0;'>Education</h2>", unsafe_allow_html=True)
+    
+    with st.container():
+        st.markdown('<div class="experience-card">', unsafe_allow_html=True)
+        col1, col2 = st.columns([3, 1])
         
-        - Programming Languages: Python, R, SQL
-        - Machine Learning: Scikit-Learn, TensorFlow, PyTorch, Auto ML
-        - Data Visualization: Matplotlib, Seaborn, Plotly
-        - Big Data Technologies: Azure Databricks, Spark
-        - ETL Processes: Azure Data Factory
-        - Generative AI: LLM, Langchain
-        - Other Tools: Git, Jupyter Notebooks, streamlit  """)
-    with st.container():
-        col1, col2 = st.columns([3,2])
-
-        col1.markdown("""
-            ### Artificial Intelligence Engineer intern –– [Uniquify Inc](https://www.uniquify.com)(August 2021-October 2021 )
-            - Led training and development of neural networks using TensorFlow, optimizing
-            models for enhanced accuracy and efficiency.
-            - Conducted comprehensive experiments with TensorFlow scripts and analyzed
-            results to enhance model performance and understand framework dynamics.
-            - Played a key role in debugging and improving an automation framework for
-            neural network and TensorFlow scripts, streamlining workflows and ensuring
-            reliable model training.
-            - Developed advanced image processing and segmentation algorithms to solve
-            complex problems, contributing to project success.
+        with col1:
+            st.markdown("""
+                ### Parvatibai Chowgule College of Arts and Science
+                **Bachelor of Science in Physics**
+                
+                - Relevant coursework: Data Structures, Algorithms, Machine Learning, Statistics
+                - GPA: 3.8/4.0 (or your actual GPA)
+                - Participated in hackathons and coding competitions
             """)
-        col2.markdown("""
-            **Tools:**
+        
+        with col2:
+            st.markdown("""
+                <div class="tools-section">
+                <h4>Graduation:</h4>
+                May 2023 (or your actual date)
+                </div>
+            """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
     
-            - Programming Languages: Python
-            - Machine Learning: TensorFlow, PyTorch
-            - Image Processing: OpenCV, custom Python scripts
-            - Object Detection: YOLO
-            - Image Labeling:  LabelImg
-            - Automation: Custom Python scripts
-            """)
+    # Projects section as alternative to work experience
+    st.markdown("<h2 style='text-align: center; margin: 30px 0;'>Projects</h2>", unsafe_allow_html=True)
+    
     with st.container():
-        col1, col2 = st.columns([3,2])
-        col1.markdown("""
-        ### Data Analyst –– [Centriqe Inc](https://bcentriqe.ai) (February 2020 - January 2021)
-        - Developed an NLP system using NLTK to automate text analysis, resulting in a significant 39% reduction in manual analysis efforts, improving efficiency and accuracy.
-        - Leveraged analytical and technical expertise to provide actionable insights and proposals, driving business improvement strategies.
-        - Designed and implemented a range of predictive models, including classification and forecasting models, using various machine learning tools to solve complex business challenges.
-        - Identified trends, key metrics, and critical data points, generating insightful dashboards using a variety of data visualization tools to facilitate data-driven decision-making.
+        st.markdown('<div class="experience-card">', unsafe_allow_html=True)
+        col1, col2 = st.columns([3, 2])
+        
+        with col1:
+            st.markdown("""
+                ### Personal Project 1
+                
+                - Developed a machine learning model to predict [specific outcome]
+                - Implemented data preprocessing and feature engineering techniques
+                - Achieved 85% accuracy on test data
+                - Technologies used: Python, scikit-learn, pandas, matplotlib
             """)
-        col2.markdown("""
-        **Tools & Skills:**
-    - **Programming Languages:** Python, SQL
-    - **Libraries & Frameworks:** NLTK, scikit-learn, Pandas, NumPy
-    - **Machine Learning Tools:** Classification, Forecasting
-    - **Data Visualization Tools:** Tableau, Matplotlib, Seaborn, Power BI
-    - **Other:** Data Cleaning, Statistical Analysis, Predictive Modeling """)
-
-
-
-    # st.markdown()
+        
+        with col2:
+            st.markdown("""
+                <div class="tools-section">
+                <h4>Technical Toolkit:</h4>
+                
+                - 💻 **Languages**: Python
+                - 🧠 **ML**: Scikit-Learn
+                - 📊 **Visualization**: Matplotlib, Seaborn
+                - 📈 **Data**: Pandas, NumPy
+                </div>
+            """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    with st.container():
+        st.markdown('<div class="experience-card">', unsafe_allow_html=True)
+        col1, col2 = st.columns([3, 2])
+        
+        with col1:
+            st.markdown("""
+                ### Personal Project 2
+                
+                - Created a web application for [specific purpose]
+                - Designed and implemented the database schema
+                - Built an interactive dashboard to visualize results
+                - Technologies used: Flask, SQLite, HTML/CSS, JavaScript
+            """)
+        
+        with col2:
+            st.markdown("""
+                <div class="tools-section">
+                <h4>Technical Toolkit:</h4>
+                
+                - 💻 **Languages**: Python, JavaScript, HTML/CSS
+                - 🌐 **Web**: Flask
+                - 🗄️ **Database**: SQLite
+                - 📊 **Frontend**: Bootstrap
+                </div>
+            """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+    
+    # Certifications
+    st.markdown("<h2 style='text-align: center; margin: 30px 0;'>Certifications</h2>", unsafe_allow_html=True)
+    
+    cols = st.columns(2)
+    
+    with cols[0]:
+        st.markdown("""
+            <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: rgba(46, 110, 255, 0.1);">
+                <h3 style="margin-bottom: 10px;">Data Science Professional Certificate</h3>
+                <p>Provider: Coursera / IBM / etc.</p>
+                <p>Completed: January 2023</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with cols[1]:
+        st.markdown("""
+            <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: rgba(46, 110, 255, 0.1);">
+                <h3 style="margin-bottom: 10px;">Machine Learning Specialization</h3>
+                <p>Provider: Coursera / Stanford / etc.</p>
+                <p>Completed: June 2023</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    # Call to action
+    st.markdown("""
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background-color: rgba(46, 110, 255, 0.05); border-radius: 10px;">
+            <h3>Looking for Opportunities</h3>
+            <p>I am currently seeking entry-level positions or internships in data science and machine learning.
+            Please reach out if you'd like to connect!</p>
+        </div>
+    """, unsafe_allow_html=True)
