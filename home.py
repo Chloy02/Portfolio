@@ -27,59 +27,91 @@ st.set_page_config(
 # Add custom CSS
 st.markdown("""
 <style>
-    /* Custom styling for the entire app */
+    /* Adaptable background */
     .main {
-        background-color: #f8f9fa;
+        background-color: transparent;
     }
+
+    /* Universal font and adaptable text color */
     .stApp {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: inherit;
     }
+
+    /* Sidebar adjustments */
     .stSidebar {
         background-color: #1a1a1a;
     }
-    /* Custom styling for headers */
-    h1, h2, h3 {
+
+    /* Headers inherit theme color */
+    h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
+        color: inherit;
     }
-    /* Custom styling for sidebar text */
+
+    /* Custom card styling */
+    .custom-card {
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for dark mode */
+        margin-bottom: 20px;
+        color: inherit;
+    }
+
+    /* Sidebar text styling */
     .sidebar-text {
-        color: white;
+        color: inherit;
         text-align: center;
         padding: 10px 0;
     }
-    /* Improve link styling */
+
+    /* Link styles */
     a {
         text-decoration: none;
         font-weight: 500;
+        color: inherit;  /* Adapt to theme */
         transition: color 0.3s;
     }
+
     a:hover {
         color: #4e89ae;
     }
-    /* Social media buttons */
+
+    /* Social icons */
     .social-icons {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-top: 15px;
     }
+
     .social-icon {
         font-size: 24px;
         transition: transform 0.3s;
+        color: inherit;
     }
+
     .social-icon:hover {
         transform: scale(1.2);
     }
-    /* Custom card styling */
-    .custom-card {
-        border-radius: 10px;
+
+    /* Sidebar navigation */
+    .stSidebar .stButton>button {
+        color: inherit;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 50px;
         padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: white;
-        margin-bottom: 20px;
+        border-top: 1px solid #ddd;
+        color: inherit;
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Improved gradient function with better styling
 def gradient(color1, color2, color3, content1, content2):
