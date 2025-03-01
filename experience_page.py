@@ -110,8 +110,27 @@ def experience():
     
     with st.container():
         st.markdown('<div class="experience-card">', unsafe_allow_html=True)
-        col1, col2 = st.columns([3, 1])
+        col1, col2 = st.columns([3, 3])
         
+        with col1:
+            st.markdown("""
+                ### FR. Agnel Multipurpose higher secondary school
+                **Science Stream Physics, Chemistry, Mathematics, Biology**
+                
+                - Relevant coursework: Data Structures, Algorithms, Machine Learning, Statistics
+                - GPA: 3.8/4.0 (or your actual GPA)
+                - Participated in hackathons and coding competitions
+            """)
+        
+        with col2:
+            st.markdown("""
+                <div class="tools-section">
+                <h4>Graduation:</h4>
+                May 2023 (or your actual date)
+                </div>
+            """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+
         with col1:
             st.markdown("""
                 ### Parvatibai Chowgule College of Arts and Science
@@ -130,14 +149,28 @@ def experience():
                 </div>
             """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
-    
-    # Projects section as alternative to work experience
-    st.markdown("<h2 style='text-align: center; margin: 30px 0;'>Projects</h2>", unsafe_allow_html=True)
-    
+
+        with col1:
+            st.markdown("""
+                ### Christ Deemed to be University
+                **Masters of Computer Application**
+                
+                - Relevant coursework: Data Structures and Algorithms, Statistics in R, Advanced Python, Data Mining
+                - Currently pursuing
+            """)
+        
+        with col2:
+            st.markdown("""
+                <div class="tools-section">
+                <h4>Graduation:</h4>
+                May 2023 (or your actual date)
+                </div>
+            """, unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+
     with st.container():
         st.markdown('<div class="experience-card">', unsafe_allow_html=True)
         col1, col2 = st.columns([3, 2])
-        
         with col1:
             st.markdown("""
                 ### Personal Project 1
@@ -160,10 +193,7 @@ def experience():
                 </div>
             """, unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
-    
-    with st.container():
-        st.markdown('<div class="experience-card">', unsafe_allow_html=True)
-        col1, col2 = st.columns([3, 2])
+
         
         with col1:
             st.markdown("""

@@ -8,4 +8,4 @@ The Portfolio Explorer is a Streamlit-based application designed to present a co
   - **Testimonial Page:** A collection of feedback and testimonials from clients or colleagues.
   - **Contact Page:** An integrated contact form for easy communication and inquiries.
 
-[app link](https://portfolio-archana.streamlit.app/)
+[app link](https://chloycosta.streamlit.app/)
