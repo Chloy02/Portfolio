@@ -239,8 +239,8 @@ st.sidebar.markdown("""
 
 # Option menu in sidebar with improved styling
 with st.sidebar:
-    pages = ["About Me", "Resume", "Experience", "Projects", "Testimonials", "Contact"]
-    icons = ['person-fill', 'file-text', 'briefcase', 'folder', 'star', 'envelope']
+    pages = ["About Me", "Resume", "Experience", "Projects", "Contact"]
+    icons = ['person-fill', 'file-text', 'briefcase', 'folder', 'envelope']
     
     nav_tab_op = option_menu(
         menu_title="Navigation",
