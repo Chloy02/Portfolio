@@ -49,8 +49,8 @@ def projects():
             "tools": ["Python", "Pandas", "Scikit-Learn", "XGBoost", "LightGBM", "Seaborn", "Matplotlib", "Astropy"],
             "links": {
                 "GitHub": "https://github.com/Chloy02/Photometric_Redshift_Estimation.git",  
-                "Research Paper": "#",
-                "Presentation": "#"
+                # "Research Paper": "#",
+                "Presentation": "https://1drv.ms/p/c/258e709b69365b6c/EQ5DUGi66ipAlKemr-nWVsgBA1y-tGbdNBzrqYlJySSa2w?e=adOOmp"
             }
         },
         {
@@ -65,8 +65,7 @@ def projects():
             "tools": ["R", "Tidyverse", "ggplot2", "dplyr", "lubridate", "Data Visualization"],
             "links": {
                 "GitHub": "https://github.com/Chloy02/Transportation_Analysis.git",  
-                "Research Paper": "#",
-                "Presentation": "#"
+                "Poster": "https://drive.google.com/file/d/1vBU5rTAlvjB0EcTmzeoQcCKtktbbYZQu/view?usp=sharing"
             }
         }
     ]
